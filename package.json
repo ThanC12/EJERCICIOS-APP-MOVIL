@@ -1,5 +1,5 @@
 {
-  "name": "ejemplo3",
+  "name": "ejemplo2",
   "license": "0BSD",
   "version": "1.0.0",
   "main": "index.js",
@@ -11,10 +11,9 @@
   },
   "dependencies": {
     "expo": "~54.0.20",
-    "expo-image-picker": "~17.0.8",
     "expo-status-bar": "~3.0.8",
-    "react": "19.1.0",
-    "react-native": "0.81.5"
+    "react": "^19.1.0",
+    "react-native": "^0.81.5"
   },
   "private": true
 }

@@ -1,41 +1,50 @@
-import React, { useState } from "react";
-import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import React from 'react';
+import { ScrollView, Text, Image, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import yo from './assets/yo.jpg';
 
 export default function App() {
-  const [message, setMessage] = useState("Seleccionar Imagen");
-
-  const onPressButton = () => {
-    setMessage("¡Botón presionado!");
-  };
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hola Mundo!!</Text>
-
-      <Image
-        source={{ uri: "https://picsum.photos/200/200" }}
-        style={styles.image}
-      />
-
-      <TouchableOpacity style={styles.button} onPress={onPressButton}>
-        <Text style={{ color: "#fff", fontWeight: "bold" }}>{message}</Text>
-      </TouchableOpacity>
-    </View>
+    <SafeAreaView style={styles.safe}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.title}>Esta es mi imagen</Text>
+        <Image source={yo} style={styles.image} />
+        <TextInput style={styles.input} defaultValue="Jonathan Cordero" />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safe: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#292929",
+    backgroundColor: '#fff',
   },
-  title: { fontSize: 30, color: "#fff" },
-  image: { height: 200, width: 200, borderRadius: 100, marginVertical: 16 },
-  button: {
-    backgroundColor: "blue",
-    padding: 7,
+  container: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 24,
+  },
+  title: {
+    fontSize: 20,
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  image: {
+    width: 200,
+    height: 200,
     borderRadius: 8,
+    marginBottom: 16,
+  },
+  input: {
+    width: 260,
+    height: 44,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    textAlign: 'center',
+    backgroundColor: '#fff',
   },
 });
